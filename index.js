@@ -1,4 +1,4 @@
-const dadosCardControleBar = {
+Ôªøconst dadosCardControleBar = {
     titulo: 'Controle de Bar',
     imagem: 'https://alexandre-rech-lages.github.io/portfolio-ap-dev/assets/sistema-bar.png',
     stack: [
@@ -7,7 +7,7 @@ const dadosCardControleBar = {
         'https://skillicons.dev/icons?i=cs&theme=light',
         'https://skillicons.dev/icons?i=net&theme=light',
     ],
-    descricao: `O Sistema de Gerenciamento para Restaurantes permite que garÁons registrem e gerenciem pedidos nas mesas, possibilitando a adiÁ„o e remoÁ„o de produtos em contas especÌficas. AlÈm disso, os funcion·rios podem cadastrar produtos, mesas e garÁons. O sistema oferece relatÛrios di·rios de faturamento e permite visualizar contas em aberto, alÈm de acompanhar o total faturado no dia, semana e mÍs, proporcionando uma gest„o eficiente das operaÁıes e do desempenho financeiro do restaurante.`
+    descricao: `O Sistema de Gerenciamento para Restaurantes permite que gar√ßons registrem e gerenciem pedidos nas mesas, possibilitando a adi√ß√£o e remo√ß√£o de produtos em contas espec√≠ficas. Al√©m disso, os funcion√°rios podem cadastrar produtos, mesas e gar√ßons. O sistema oferece relat√≥rios di√°rios de faturamento e permite visualizar contas em aberto, al√©m de acompanhar o total faturado no dia, semana e m√™s, proporcionando uma gest√£o eficiente das opera√ß√µes e do desempenho financeiro do restaurante.`
 };
 
 const dadosCardControleCinema = {
@@ -19,14 +19,14 @@ const dadosCardControleCinema = {
         'https://skillicons.dev/icons?i=cs&theme=light',
         'https://skillicons.dev/icons?i=net&theme=light',
     ],
-    descricao: `O Sistema de Controle de Cinemas foi criado para otimizar a gest„o de ingressos e salas no Cinema de Lages. Ele permite que os funcion·rios registrem e gerenciem informaÁıes das salas, filmes e sessıes, facilitando o controle da capacidade e a venda de ingressos. Com funcionalidades de cadastro, consulta, alteraÁ„o e remoÁ„o de sessıes, o sistema organiza as exibiÁıes do dia e apresenta detalhes sobre as poltronas disponÌveis e vendidas, agilizando o atendimento e melhorando a experiÍncia dos clientes.`
+    descricao: `O Sistema de Controle de Cinemas foi criado para otimizar a gest√£o de ingressos e salas no Cinema de Lages. Ele permite que os funcion√°rios registrem e gerenciem informa√ß√µes das salas, filmes e sess√µes, facilitando o controle da capacidade e a venda de ingressos. Com funcionalidades de cadastro, consulta, altera√ß√£o e remo√ß√£o de sess√µes, o sistema organiza as exibi√ß√µes do dia e apresenta detalhes sobre as poltronas dispon√≠veis e vendidas, agilizando o atendimento e melhorando a experi√™ncia dos clientes.`
 }
 
 let cardSelecionado;
 
 function carregarDadosCardAtual() {
     if (!cardSelecionado)
-        throw new Error('Card n„o selecionado.');
+        throw new Error('Card n√£o selecionado.');
 
     const imgCard = document.getElementById('imgCard');
     const stackCard = document.getElementById('stackCard');
