@@ -1,25 +1,29 @@
-﻿const dadosCardControleBar = {
-    titulo: 'Controle de Bar',
-    imagem: 'https://alexandre-rech-lages.github.io/portfolio-ap-dev/assets/sistema-bar.png',
+﻿const dadosCardGestaoMedicamentos = {
+    titulo: 'Gestão de Medicamentos',
+    imagem: 'https://i.imgur.com/qJHb6iI.png',
+    gif: 'https://i.imgur.com/AKK9i0I.gif',
+    urlRepositorio: 'https://github.com/Carlos-Henrique-Rafaeli/controle-de-medicamentos',
     stack: [
         'https://skillicons.dev/icons?i=html&theme=light',
         'https://skillicons.dev/icons?i=css&theme=light',
         'https://skillicons.dev/icons?i=cs&theme=light',
         'https://skillicons.dev/icons?i=net&theme=light',
     ],
-    descricao: `O Sistema de Gerenciamento para Restaurantes permite que garçons registrem e gerenciem pedidos nas mesas, possibilitando a adição e remoção de produtos em contas específicas. Além disso, os funcionários podem cadastrar produtos, mesas e garçons. O sistema oferece relatórios diários de faturamento e permite visualizar contas em aberto, além de acompanhar o total faturado no dia, semana e mês, proporcionando uma gestão eficiente das operações e do desempenho financeiro do restaurante.`
+    descricao: `O sistema de Controle de Medicamentos apresenta o conceito de gerenciamento de um posto de saúde, com o controle de fornecimento, estoque, funcionários, pacientes e retirada de prescrições — com foco na rastreabilidade das movimentações de estoque.`
 };
 
-const dadosCardControleCinema = {
-    titulo: 'Controle de Cinema',
-    imagem: 'https://alexandre-rech-lages.github.io/portfolio-ap-dev/assets/sistema-cinema.png',
+const dadosCardGestaoEquipamentos = {
+    titulo: 'Gestão de Equipamentos',
+    imagem: 'https://i.imgur.com/njV7bm4.png',
+    gif: 'https://i.imgur.com/vyl4wk3.gif',
+    urlRepositorio: 'https://github.com/Carlos-Henrique-Rafaeli/gestao-de-equipamentos',
     stack: [
         'https://skillicons.dev/icons?i=html&theme=light',
         'https://skillicons.dev/icons?i=css&theme=light',
         'https://skillicons.dev/icons?i=cs&theme=light',
         'https://skillicons.dev/icons?i=net&theme=light',
     ],
-    descricao: `O Sistema de Controle de Cinemas foi criado para otimizar a gestão de ingressos e salas no Cinema de Lages. Ele permite que os funcionários registrem e gerenciem informações das salas, filmes e sessões, facilitando o controle da capacidade e a venda de ingressos. Com funcionalidades de cadastro, consulta, alteração e remoção de sessões, o sistema organiza as exibições do dia e apresenta detalhes sobre as poltronas disponíveis e vendidas, agilizando o atendimento e melhorando a experiência dos clientes.`
+    descricao: `O sistema de Gestão de Equipamentos controla o estoque de um almoxarifado, com a gestão de equipamentos e o registro de chamados de manutenção que eventualmente ocorrem durante o uso dos equipamentos. Também são inclusas informações sobre os fabricantes dos equipamentos para contato de suporte ou compras.`
 }
 
 let cardSelecionado;
@@ -32,10 +36,12 @@ function carregarDadosCardAtual() {
     const stackCard = document.getElementById('stackCard');
     const tituloCard = document.getElementById('tituloCard');
     const descricaoCard = document.getElementById('descricaoCard');
+    const urlRepositorio = document.getElementById('urlRepositorio');
 
     imgCard.src = cardSelecionado.imagem;
     tituloCard.textContent = cardSelecionado.titulo;
     descricaoCard.textContent = cardSelecionado.descricao;
+    urlRepositorio.href = cardSelecionado.urlRepositorio;
 
     stackCard.innerHTML = '';
 
@@ -49,27 +55,34 @@ function carregarDadosCardAtual() {
 }
 
 function selecionarPrimeiroCard() {
-    if (cardSelecionado == dadosCardControleBar)
+    if (cardSelecionado == dadosCardGestaoMedicamentos)
         return;
 
-    cardSelecionado = dadosCardControleBar;
+    cardSelecionado = dadosCardGestaoMedicamentos;
     carregarDadosCardAtual();
 }
 
 function selecionarSegundoCard() {
-    if (cardSelecionado == dadosCardControleCinema)
+    if (cardSelecionado == dadosCardGestaoEquipamentos)
         return;
 
-    cardSelecionado = dadosCardControleCinema;
+    cardSelecionado = dadosCardGestaoEquipamentos;
     carregarDadosCardAtual();
+}
+
+function abrirModalProjeto() {
+    document.getElementById('portfolioModalLabel').textContent = cardSelecionado.titulo;
+    document.getElementById('portfolioModalImage').src = cardSelecionado.gif;
 }
 
 function main() {
     const btnSelecionarPrimeiroCard = document.getElementById("btnSelecionarPrimeiroCard");
     const btnSelecionarSegundoCard = document.getElementById("btnSelecionarSegundoCard");
+    const btnVerProjeto = document.getElementById("btnVerProjeto");
 
     btnSelecionarPrimeiroCard.addEventListener('click', selecionarPrimeiroCard);
     btnSelecionarSegundoCard.addEventListener('click', selecionarSegundoCard);
+    btnVerProjeto.addEventListener('click', abrirModalProjeto);
 
     selecionarPrimeiroCard();
 };
