@@ -26,6 +26,21 @@ const dadosCardGestaoEquipamentos = {
     descricao: `O sistema de Gestão de Equipamentos controla o estoque de um almoxarifado, com a gestão de equipamentos e o registro de chamados de manutenção que eventualmente ocorrem durante o uso dos equipamentos. Também são inclusas informações sobre os fabricantes dos equipamentos para contato de suporte ou compras.`
 }
 
+const dadosCardGestaoDeBar = {
+    titulo: 'Gestão de Bar',
+    imagem: 'https://i.imgur.com/l93SOZQ.png',
+    gif: 'https://i.imgur.com/18oFjBf.gif',
+    urlRepositorio: 'https://github.com/Carlos-Henrique-Rafaeli/controle-de-bar',
+    stack: [
+        'https://skillicons.dev/icons?i=html&theme=light',
+        'https://skillicons.dev/icons?i=css&theme=light',
+        'https://skillicons.dev/icons?i=cs&theme=light',
+        'https://skillicons.dev/icons?i=net&theme=light',
+        'https://skillicons.dev/icons?i=bootstrap&theme=light',
+    ],
+    descricao: `O sistema de Gestão de Bar permite o gerenciamento completo do funcionamento de um bar, com cadastro de mesas, garçons, produtos e controle de contas dos clientes. É possível acompanhar o andamento das contas, registrar pedidos, visualizar contas abertas ou fechadas e consultar o faturamento com base nas vendas realizadas.`
+}
+
 let cardSelecionado;
 
 function carregarDadosCardAtual() {
@@ -70,6 +85,14 @@ function selecionarSegundoCard() {
     carregarDadosCardAtual();
 }
 
+function selecionarTerceiroCard() {
+    if (cardSelecionado === dadosCardGestaoDeBar)
+        return;
+
+    cardSelecionado = dadosCardGestaoDeBar;
+    carregarDadosCardAtual();
+}
+
 function abrirModalProjeto() {
     document.getElementById('portfolioModalLabel').textContent = cardSelecionado.titulo;
     document.getElementById('portfolioModalImage').src = cardSelecionado.gif;
@@ -78,10 +101,12 @@ function abrirModalProjeto() {
 function main() {
     const btnSelecionarPrimeiroCard = document.getElementById("btnSelecionarPrimeiroCard");
     const btnSelecionarSegundoCard = document.getElementById("btnSelecionarSegundoCard");
+    const btnSelecionarTerceiroCard = document.getElementById("btnSelecionarTerceiroCard");
     const btnVerProjeto = document.getElementById("btnVerProjeto");
 
     btnSelecionarPrimeiroCard.addEventListener('click', selecionarPrimeiroCard);
     btnSelecionarSegundoCard.addEventListener('click', selecionarSegundoCard);
+    btnSelecionarTerceiroCard.addEventListener('click', selecionarTerceiroCard);
     btnVerProjeto.addEventListener('click', abrirModalProjeto);
 
     selecionarPrimeiroCard();
